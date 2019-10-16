@@ -22,21 +22,70 @@
 Queue queue[2];
 Dtype Indata[2];
 Dtype Outdata[2];
-
+bool pong_ready=false;
 while(true){
     // PING
-    prepareData(Indata[0]);
+    if(prepareData(Indata[0]) == false){
+        break;  // if no more data, restart
+    }
     // PING
     Invoke(queue[0]);
     // PONG
-    prepareData(Indata[1]);
+    if(pong_ready){
+        Sync(queue[1]);
+    }
+    // PONG
+    if(prepareData(Indata[1]) == false){
+        break;  // if no more data, start
+    }
     // PONG
     Invoke(queue[1]);
+    pong_ready=true;
+
     // PING: CPU has done all thw work it can do, now wait for ASIC to finish
     Sync(queue[0]);
 
 }
-
-
 ```
+这个版本能实现基本的PINGPONG，功能还可以
+
+但是有一点可以改进的地方：
+- 如果当前队列没有数据，可以判断一下另一个队列是否Ready to Sync，如果是，那么可以调用Sync
+
+```cpp
+Queue queue[2];
+Dtype Indata[2];
+Dtype Outdata[2];
+bool pong_ready=false;
+while(true){
+    // PING
+    if(prepareData(Indata[0]) == false){
+        if(pong_ready){
+            Sync(queue[1]);
+            pong_ready=false;
+        }
+        break;  // if no more data, restart
+    }
+    // PING
+    Invoke(queue[0]);
+    // PONG
+    if(pong_ready){
+        Sync(queue[1]);
+        pong_ready=false;
+    }
+    // PONG
+    if(prepareData(Indata[1]) == false){
+        Sync(queue[0]);
+        break;  // if no more data, start
+    }
+    // PONG
+    Invoke(queue[1]);
+    pong_ready=true;
+
+    // PING: CPU has done all thw work it can do, now wait for ASIC to finish
+    Sync(queue[0]);
+
+}
+```
+
 
