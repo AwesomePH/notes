@@ -38,13 +38,52 @@ Animal::~Animal()
 
 # 编译器为什么会生成两个析构函数？
 
-
 a special destructor created for by the compiler. It's called the deleting destructor and its existence is described by the Itanium C++ ABI:
 
-deleting destructor of a class T - A function that, in addition to the actions required of a complete object destructor, calls the appropriate deallocation function (i.e,. operator delete) for T.
+`deleting destructor` of a class T - A function that, in addition to the actions required of a complete object destructor, calls the appropriate deallocation function (i.e,. operator delete) for T.
 The ABI goes on to provide more details:
 
 The entries for virtual destructors are actually pairs of entries. The first destructor, called the complete object destructor, performs the destruction without calling delete() on the object. The second destructor, called the deleting destructor, calls delete() after destroying the object.
+
+D2 is the "base object destructor". It destroys the object itself, as well as data members and non-virtual base classes.
+
+D1 is the "complete object destructor". It additionally destroys virtual base classes.
+
+D0 is the "deleting object destructor". It does everything the complete object destructor does, plus it calls operator delete to actually free the memory.
+
+# deleting destructor
+
+```asm
+_ZN6AnimalD0Ev:
+.LFB6:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$32, %rsp
+	.seh_stackalloc	32
+	.seh_endprologue
+	movq	%rcx, 16(%rbp)
+	movq	16(%rbp), %rcx
+	call	_ZN6AnimalD1Ev
+	movq	16(%rbp), %rcx
+	call	_ZdlPv
+```
+
+可以看到 `_ZN6AnimalD0Ev` 调用了 `_ZN6AnimalD1Ev`, `_ZdlPv`
+
+也就是说，deleting destructor 是 `complete object destructor + delete`
+
+其中 `_ZdlPv` 可以看到是 `delete`
+
+## 子类调用基类的哪个析构函数？
+总结上面的内容：
+- 如果有虚函数，则会生成虚函数表，也会生成D0类型的析构函数；如果没有虚函数则一般没有D0
+- 如果没有虚函数，则有可能D1和D2是同一个
+
+那么子类的D0会调用基类的哪个析构函数呢？
+
+- 测试结果看起来是会调用D2，也就是最基本的析构
 
 # 只有一个析构函数
 
