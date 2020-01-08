@@ -85,6 +85,8 @@ _ZN6AnimalD0Ev:
 ```
 
 可以看到 `_ZN6AnimalD0Ev` 调用了 `_ZN6AnimalD1Ev`, `_ZdlPv`
+1. 调用D1
+2. 调用delete
 
 也就是说，deleting destructor 是 `complete object destructor + delete`
 
@@ -93,11 +95,24 @@ _ZN6AnimalD0Ev:
 ## 子类调用基类的哪个析构函数？
 总结上面的内容：
 - 如果有虚函数，则会生成虚函数表，也会生成D0类型的析构函数；如果没有虚函数则一般没有D0
-- 如果没有虚函数，则有可能D1和D2是同一个
+- 如果没有虚函数&虚继承，则D1和D2是同一个
 
-那么子类的D0会调用基类的哪个析构函数呢？
+那么子类的D0会调用基类的哪个析构函数呢？D0还是D1还是D2？
 
-- 测试结果看起来是会调用D2，也就是最基本的析构
+可以这样理解：
+比如C继承自B，B继承自A
+
+最后由C完成delete，只有C是知道C的大小是多大的
+
+则调用关系为：
+- C::D0 -> C::D1 -> C::D2
+- C::D2 -> B::D2
+- B::D2 -> A::D2
+
+>C::des     
+B::des  
+A::des  
+C::delete
 
 # 只有一个析构函数
 
