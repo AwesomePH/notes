@@ -284,6 +284,14 @@ if (N < this->size()) {
 ### `Reshape`:不改变numel
 和`resize`的区别：不改变内存，元素总数一致，仅改变 `sizes_` 成员
 
+在改变 sizes_ 成员之后，调用 `empty_tensor_restride` 接口，重新计算stride
+
+#### empty_tensor_restride
+注意：这个接口只对如下内存格式有效，就是重新计算stride
+- Contigous
+- ChannelsLast
+
+
 ### TensorImpl的浅拷贝
 用途：
 - 两个`Variable`有相同的 tensor metadata, 但 autograd history 不一样
