@@ -57,6 +57,56 @@ StorageImpl(
   }
 ```
 
+## Storage, StorageImpl 被 TensorImpl 使用的接口
+
+### Storage::data(), unsafe_data()
+
+```cpp
+  template <typename T>
+  inline T* data() const {
+    auto data_type = caffe2::TypeMeta::Make<T>();
+    if (dtype() != data_type) {
+    }
+    return unsafe_data<T>();
+  }
+
+  template <typename T>
+  inline T* unsafe_data() const {
+    return static_cast<T*>(this->data_ptr_.get());
+  }
+```
+由于数据指针是 `void*` 类型的，因此需要进行一个 static_cast 将数据转换为模板参数 T 类型 
+
+### unique()
+实际是  `c10::intrusive_ptr::unique()`
+
+```cpp
+  bool unique() const noexcept {
+    return use_count() == 1;
+  }
+```
+### itemsize()
+
+`return data_type_.itemsize();`
+
+### data_ptr()
+即返回 DataPtr 类型的指针 data_ptr_
+
+### capacity(), numel()
+```cpp
+  size_t capacity() const {
+    return numel_ * itemsize();
+  }
+```
+
+### UniqueStorageShareExternalPointer
+-> `storage_impl_->UniqueStorageShareExternalPointer(
+        src, data_type, capacity, d);`
+
+-> `UniqueStorageShareExternalPointer(
+        at::DataPtr(src, src, d, data_ptr_.device()), data_type, capacity);`
+
+
 # Allocator
 
 ```cpp
