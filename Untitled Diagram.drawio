@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-21T06:37:20.452Z" agent="5.0 (X11)" etag="o2_EJzQq9aL9poue1OPm" version="13.8.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-21T06:58:08.472Z" agent="5.0 (X11)" etag="354zam6go6H2oT3oivC0" version="13.8.1" type="github">
   <diagram id="v_nvT8ZMRaaNZ1D_ayb4" name="Page-1">
     <mxGraphModel dx="1138" dy="639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -39,7 +39,7 @@
         <mxCell id="O-ZwVIryo0NKM8jk4yb6-8" value="解析得到netparam" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="120" y="295" width="70" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="O-ZwVIryo0NKM8jk4yb6-9" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="O-ZwVIryo0NKM8jk4yb6-8" target="O-ZwVIryo0NKM8jk4yb6-4" edge="1">
+        <mxCell id="O-ZwVIryo0NKM8jk4yb6-9" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="O-ZwVIryo0NKM8jk4yb6-8" target="O-ZwVIryo0NKM8jk4yb6-4" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="210" y="400" as="sourcePoint" />
             <mxPoint x="260" y="350" as="targetPoint" />
@@ -79,7 +79,7 @@
           <mxGeometry x="180" y="232.5" width="70" height="20" as="geometry" />
         </mxCell>
         <mxCell id="Stex0h5j8dVFl6hF4uOk-8" value="Netparam" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
-          <mxGeometry x="190" y="295" width="70" height="20" as="geometry" />
+          <mxGeometry x="180" y="295" width="70" height="20" as="geometry" />
         </mxCell>
         <mxCell id="Stex0h5j8dVFl6hF4uOk-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Stex0h5j8dVFl6hF4uOk-10" target="Stex0h5j8dVFl6hF4uOk-15">
           <mxGeometry relative="1" as="geometry">
@@ -91,6 +91,50 @@
         </mxCell>
         <mxCell id="Stex0h5j8dVFl6hF4uOk-15" value="&lt;div&gt;IModel&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="770" y="250" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Stex0h5j8dVFl6hF4uOk-16" value="&lt;div&gt;多firstconv自动检测&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Stex0h5j8dVFl6hF4uOk-17" value="非firstconv支持mean std设置" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Stex0h5j8dVFl6hF4uOk-18" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Stex0h5j8dVFl6hF4uOk-16" target="Stex0h5j8dVFl6hF4uOk-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="410" as="sourcePoint" />
+            <mxPoint x="280" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="290" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Stex0h5j8dVFl6hF4uOk-19" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Stex0h5j8dVFl6hF4uOk-17" target="Stex0h5j8dVFl6hF4uOk-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="420" as="sourcePoint" />
+            <mxPoint x="290" y="390" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="290" y="435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Stex0h5j8dVFl6hF4uOk-21" value="&lt;div&gt;插入trans, cast 层&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="450" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Stex0h5j8dVFl6hF4uOk-22" value="" style="endArrow=classic;html=1;exitX=1.011;exitY=0.55;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Stex0h5j8dVFl6hF4uOk-21" target="Stex0h5j8dVFl6hF4uOk-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="461" as="sourcePoint" />
+            <mxPoint x="300" y="400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="290" y="461" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Stex0h5j8dVFl6hF4uOk-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Stex0h5j8dVFl6hF4uOk-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="288" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Stex0h5j8dVFl6hF4uOk-24" value="&lt;div&gt;Info&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="255" y="330" width="70" height="45" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
