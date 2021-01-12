@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-12T07:10:39.044Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="XdfCk6kkyj3bie7xHRU4" version="14.1.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-12T07:12:46.411Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="4dTLvqxZ1TNIrotXSf0J" version="14.1.9" type="github">
   <diagram id="2HvPIIGs0C9n64JYkHzc" name="Page-1">
     <mxGraphModel dx="2249" dy="2002" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -210,17 +210,8 @@
         <mxCell id="iBP-Zs9dHaloWAc4jQ8L-56" value="&lt;font color=&quot;#ea6b66&quot;&gt;engine&lt;/font&gt;=CPU/MLU?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
           <mxGeometry x="300" y="520" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="iBP-Zs9dHaloWAc4jQ8L-64" target="iBP-Zs9dHaloWAc4jQ8L-53">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="535" y="890" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-100" value="TODO：这里缺少MM后端选择" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="iBP-Zs9dHaloWAc4jQ8L-67">
-          <mxGeometry x="-0.8136" y="4" relative="1" as="geometry">
-            <mxPoint y="76" as="offset" />
-          </mxGeometry>
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-174" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;" edge="1" parent="1" source="iBP-Zs9dHaloWAc4jQ8L-64" target="iBP-Zs9dHaloWAc4jQ8L-172">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="iBP-Zs9dHaloWAc4jQ8L-64" value="layer::forward_mfus" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
           <mxGeometry x="460" y="671" width="150" height="60" as="geometry" />
@@ -574,6 +565,20 @@
         </mxCell>
         <mxCell id="iBP-Zs9dHaloWAc4jQ8L-171" value="layer会被掉到MFUS模式的forward场景：&lt;br&gt;subnet不支持MFUS；&lt;br&gt;但也有可能写了MLU逐层后端；对于MM来说，不存在支持逐层不支持融合，MM后端情况下，直接调用CPU" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="344" y="379.5" width="166" height="110.5" as="geometry" />
+        </mxCell>
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-173" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="iBP-Zs9dHaloWAc4jQ8L-172" target="iBP-Zs9dHaloWAc4jQ8L-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-175" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="iBP-Zs9dHaloWAc4jQ8L-172" target="iBP-Zs9dHaloWAc4jQ8L-44">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="535" y="940" />
+              <mxPoint x="-5" y="940" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-172" value="mlu_backend" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="480" y="830" width="110" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
