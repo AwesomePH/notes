@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-12T07:09:28.845Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="c1yQ7IHR4sce2LrP3aQb" version="14.1.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-12T07:10:39.044Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="XdfCk6kkyj3bie7xHRU4" version="14.1.9" type="github">
   <diagram id="2HvPIIGs0C9n64JYkHzc" name="Page-1">
     <mxGraphModel dx="2249" dy="2002" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -572,7 +572,7 @@
             <mxPoint x="290" y="950" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-171" value="layer会被掉到MFUS模式的forward场景：&lt;br&gt;subnet不支持MFUS；&lt;br&gt;意味着MLU后端未实现，则会自动走到CPU" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-171" value="layer会被掉到MFUS模式的forward场景：&lt;br&gt;subnet不支持MFUS；&lt;br&gt;但也有可能写了MLU逐层后端；对于MM来说，不存在支持逐层不支持融合，MM后端情况下，直接调用CPU" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="344" y="379.5" width="166" height="110.5" as="geometry" />
         </mxCell>
       </root>
