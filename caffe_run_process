@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-01-12T03:20:38.977Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="0pLWL3OaslpPcA1zZjAv" version="14.1.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-12T03:22:35.232Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="jqBZ-4jlAeV55ODixE3_" version="14.1.9" type="github">
   <diagram id="2HvPIIGs0C9n64JYkHzc" name="Page-1">
-    <mxGraphModel dx="2249" dy="833" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1808" dy="574" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -366,6 +366,9 @@
         <mxCell id="iBP-Zs9dHaloWAc4jQ8L-101" value="&lt;font color=&quot;#ea6b66&quot;&gt;MFUS supported&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
           <mxGeometry x="1147" y="400" width="120" height="80" as="geometry" />
         </mxCell>
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-114" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;" edge="1" parent="1" source="iBP-Zs9dHaloWAc4jQ8L-103" target="iBP-Zs9dHaloWAc4jQ8L-111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="iBP-Zs9dHaloWAc4jQ8L-103" value="subnet::Reshape_mfus" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
           <mxGeometry x="1050" y="510" width="160" height="60" as="geometry" />
         </mxCell>
@@ -377,6 +380,37 @@
         </mxCell>
         <mxCell id="iBP-Zs9dHaloWAc4jQ8L-107" value="layer::Reshape_dispatch" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
           <mxGeometry x="1230.5" y="650" width="173" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="iBP-Zs9dHaloWAc4jQ8L-111" target="iBP-Zs9dHaloWAc4jQ8L-112">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="iBP-Zs9dHaloWAc4jQ8L-111" target="iBP-Zs9dHaloWAc4jQ8L-113">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1210" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-111" value="mlu_backend" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="650" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;" edge="1" parent="1" source="iBP-Zs9dHaloWAc4jQ8L-112" target="iBP-Zs9dHaloWAc4jQ8L-107">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="890" />
+              <mxPoint x="1317" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-112" value="ReshapeCNML" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="729" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iBP-Zs9dHaloWAc4jQ8L-113" value="ReshapeMM" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="729" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
