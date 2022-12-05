@@ -25,7 +25,7 @@ def sample_path(child_ind, results):
 def func():
     Path.reset()
     paths=[]
-    paths_dict = {}             # 这里作为线程的输入，为什么不会冲突
+    paths_dict = {}             # 这里作为线程的输入，为什么不会冲突--因为cpython的dict操作是原子的，虽然也许不应该依赖
     child_num = 80
     threads = []
     for child_ind in range(child_num):
